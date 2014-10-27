@@ -1,0 +1,91 @@
+services:
+    #content
+    sonata.admin.post:
+        class: Makoto\AdminBundle\Admin\PostAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Post" }
+        arguments:
+            - ~
+            - Makoto\AdminBundle\Entity\Post
+            - ~
+        calls:
+            - [ setTranslationDomain, [MakotoAdminBundle]]
+
+#    sonata.admin.post_tag:
+#        class: Makoto\AdminBundle\Admin\PostTagAdmin
+#        tags:
+#            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Tag" }
+#        arguments:
+#            - ~
+#            - Makoto\AdminBundle\Entity\PostTag
+#            - ~
+#        calls:
+#            - [ setTranslationDomain, [MakotoAdminBundle]]
+
+    sonata.admin.post_category:
+        class: Makoto\AdminBundle\Admin\PostCategoryAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Category" }
+        arguments:
+            - ~
+            - Makoto\AdminBundle\Entity\PostCategory
+            - ~
+        calls:
+            - [ setTranslationDomain, [MakotoAdminBundle]]
+
+    sonata.timeline.blocks:
+        class: Makoto\AdminBundle\Admin\TimelineBlock
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "WebSite Editor", label: "Time Line" }
+        arguments:
+            - ~
+            - Makoto\AdminBundle\Entity\Timeline
+            - ~
+        calls:
+            - [ setTranslationDomain, [MakotoAdminBundle]]
+
+    sonata.admin.blocks:
+        class: Makoto\AdminBundle\Admin\BlockAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "WebSite Editor", label: "Blocks" }
+        arguments:
+            - ~
+            - Makoto\AdminBundle\Entity\Block
+            - ~
+        calls:
+            - [ setTranslationDomain, [MakotoAdminBundle]]
+    #widget
+#    sonata.admin.widget_slider:
+#        class: Makoto\AdminBundle\Admin\SliderAdmin
+#        tags:
+#            - { name: sonata.admin, manager_type: orm, group: "Widget", label: "Slider" }
+#        arguments:
+#            - ~
+#            - Makoto\AdminBundle\Entity\Slider
+#            - ~
+#        calls:
+#            - [ setTranslationDomain, [MakotoAdminBundle]]
+
+#    sonata.admin.widget_contact:
+#        class: Makoto\AdminBundle\Admin\ContactAdmin
+#        tags:
+#            - { name: sonata.admin, manager_type: orm, group: "Widget", label: "Contact" }
+#        arguments:
+#            - ~
+#            - Makoto\AdminBundle\Entity\Contact
+#            - ~
+#        calls:
+#            - [ setTranslationDomain, [MakotoAdminBundle]]
+#            - [ addChild, [@sonata.admin.widget_contact_type]]
+
+#    sonata.admin.widget_contact_type:
+#        class: Makoto\AdminBundle\Admin\ContactTypeAdmin
+#        tags:
+#            - { name: sonata.admin, manager_type: orm, group: "Widget", label: "ContactType" }
+#        arguments:
+#            - ~
+#            - Makoto\AdminBundle\Entity\ContactType
+#            - ~
+#        calls:
+#            - [ setTranslationDomain, [MakotoAdminBundle]]
+

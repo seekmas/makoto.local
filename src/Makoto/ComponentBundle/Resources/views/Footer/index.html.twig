@@ -1,0 +1,91 @@
+<!-- Footer -->
+<footer class="footer" id="footer">
+	<div class="footer-widgets">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3">
+					<!-- Widget :: Latest Posts -->
+					<div class="latest-posts-widget widget widget__footer">
+						<h3 class="widget-title">Latest Posts</h3>
+						<div class="widget-content">
+							<ul class="latest-posts-list">
+								{% for post in latest_posts %}
+								<li>
+									<figure class="thumbnail"><a href="#"></a></figure>
+									<span class="date">{{post.date|date('d/m/Y')}}</span>
+									<h5 class="title"><a href="{{url('cms_catalogue_article' , { 'alias' : post.alias , '_format':'makoto' })}}">{{post.title}}</a></h5>
+								</li>
+								{% endfor %}
+							</ul>
+						</div>
+					</div>
+					<!-- /Widget :: Latest Posts -->
+				</div>
+				<div class="col-md-3">
+					<!-- Widget :: Contacts Info -->
+					<div class="contacts-widget widget widget__footer">
+						<h3 class="widget-title">Contact Us</h3>
+						<div class="widget-content">
+							<ul class="contacts-info-list">
+								{% for contact in contactUs %}
+								<li>
+									{{contact.contactType.icon | raw}}
+									<div class="info-item" title="{{contact.description}}">
+										{{contact.contactMethod}}
+									</div>
+								</li>
+								{% endfor %}
+							</ul>
+						</div>
+					</div>
+					<!-- /Widget :: Contacts Info -->
+				</div>
+				<div class="col-md-3">
+					<!-- Widget :: Categories -->
+					<div class="widget_categories widget widget__footer">
+						<h3 class="widget-title">Categories</h3>
+						<div class="widget-content">
+							<ul>
+								{% for cate in categories %}
+								<li><a href="{{url('cms_catalogue' , { 'alias' : cate.alias , '_format':'html' })}}">{{cate.subject}}</a></li>
+								{% endfor %}
+							</ul>
+						</div>
+					</div>
+					<!-- /Widget :: Categories -->
+				</div>
+				<div class="col-md-3">
+					<!-- Widget :: Flickr -->
+					<div class="widget_flickr widget widget__footer">
+						<h3 class="widget-title">Flickr</h3>
+						<div class="widget-content">
+							<!-- Flickr images will appear here -->
+							<ul id="flickr" class="flickr-feed"></ul>
+						</div>
+					</div>
+					<!-- /Widget :: Flickr -->
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer-copyright">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-6 col-md-4">
+					Copyright &copy; 2014  <a href="index-2.html">Makoto Globals</a> &nbsp;| &nbsp;All Rights Reserved
+				</div>
+				<div class="col-sm-6 col-md-8">
+					<div class="social-links-wrapper">
+						<span class="social-links-txt">Connect with us</span>
+						<ul class="social-links social-links__dark">
+							<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+							<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+							<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+<!-- Footer / End -->

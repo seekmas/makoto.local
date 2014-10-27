@@ -1,0 +1,15 @@
+{% extends "MakotoCmsBundle::layouts.html.twig" %}
+
+{% block main %}
+
+	{{render_esi( controller('MakotoComponentBundle:Slider:index'))}}
+
+	{{include('MakotoComponentBundle:Pages:makoto_way.html.twig')}}
+
+	{{include('MakotoComponentBundle:Pages:water.html.twig')}}
+
+	{{include('MakotoComponentBundle:Pages:makoto_way_section2.html.twig')}}
+
+{% endblock %}
+
+

@@ -1,0 +1,9 @@
+{% extends "MakotoCmsBundle::layouts.html.twig" %}
+
+{% block main %}
+	
+	{% set path = 'MakotoComponentBundle:Pages:' ~ template_name ~ '.html.twig' %}
+	
+	{{include( path )}}
+
+{% endblock %}

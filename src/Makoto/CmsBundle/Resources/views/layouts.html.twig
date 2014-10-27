@@ -1,0 +1,142 @@
+{% extends "::base.html.twig" %}
+
+
+{% block stylesheets %}
+
+	<link rel="stylesheet" href="{{asset("bundles/stability/css/bootstrap.min.css")}}">
+	<link rel="stylesheet" href="{{asset("bundles/stability/css/fonts/font-awesome/css/font-awesome.css")}}">
+	<link rel="stylesheet" href="{{asset("bundles/stability/vendor/owl-carousel/owl.carousel.css")}}" media="screen">
+	<link rel="stylesheet" href="{{asset("bundles/stability/vendor/owl-carousel/owl.theme.css")}}" media="screen">
+	<link rel="stylesheet" href="{{asset("bundles/stability/vendor/magnific-popup/magnific-popup.css")}}" media="screen">
+	<link rel="stylesheet" href="{{asset("bundles/stability/vendor/rs-plugin/css/settings.css")}}" media="screen">
+
+	<!-- Theme CSS-->
+	<link rel="stylesheet" href="{{asset("bundles/stability/css/theme.css")}}">
+	<link rel="stylesheet" href="{{asset("bundles/stability/css/theme-elements.css")}}">
+	<link rel="stylesheet" href="{{asset("bundles/stability/css/animate.min.css")}}">
+
+	<!-- Skin CSS -->
+	<link rel="stylesheet" href="{{asset("bundles/stability/css/skins/blue.css")}}">
+
+	<!-- Makoto CSS -->
+	<link rel="stylesheet" href="{{asset("assets/css/makoto.css")}}">
+
+	<!-- Head Libs -->
+	<script src="{{asset("bundles/stability/vendor/modernizr.js")}}"></script>
+
+	<!--[if lt IE 9]>
+		<link rel="stylesheet" href="vendor/rs-plugin/css/settings-ie8.css" media="screen">
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<script src="{{asset("bundles/stability/vendor/respond.min.js")}}"></script>
+	<![endif]-->
+
+	<!--[if IE]>
+		<link rel="stylesheet" href="{{asset("bundles/stability/css/ie.css")}}">
+	<![endif]-->
+	<link rel="stylesheet" media="screen,projection" href="{{ asset('assets/back/css/ui.totop.css') }}" />
+
+	<link rel="apple-touch-icon" href="{{asset("bundles/stability/images/apple-touch-icon.png")}}">
+	<link rel="apple-touch-icon" sizes="72x72" href="{{asset("bundles/stability/images/apple-touch-icon-72x72.png")}}">
+	<link rel="apple-touch-icon" sizes="114x114" href="{{asset("bundles/stability/images/apple-touch-icon-114x114.png")}}">
+	<link rel="apple-touch-icon" sizes="144x144" href="{{asset("bundles/stability/images/apple-touch-icon-144x144.png")}}">
+
+{% endblock %}
+
+{% block javascripts %}
+
+
+	<script src="{{asset("bundles/stability/vendor/jquery-1.11.0.min.js")}}"></script>
+	<script src="{{asset("bundles/stability/vendor/jquery-migrate-1.2.1.min.js")}}"></script>
+	<script src="{{asset("bundles/stability/vendor/bootstrap.js")}}"></script>
+	<script src="{{asset("bundles/stability/vendor/jquery.flexnav.min.js")}}"></script>
+	<script src="{{asset("bundles/stability/vendor/jquery.hoverIntent.minified.js")}}"></script>
+	<script src="{{asset("bundles/stability/vendor/jquery.flickrfeed.js")}}"></script>
+	<script src="{{asset("bundles/stability/vendor/isotope/jquery.isotope.min.js")}}"></script>
+	<script src="{{asset("bundles/stability/vendor/isotope/jquery.isotope.sloppy-masonry.min.js")}}"></script>
+	<script src="{{asset("bundles/stability/vendor/isotope/jquery.imagesloaded.min.js")}}"></script>
+	<script src="{{asset("bundles/stability/vendor/magnific-popup/jquery.magnific-popup.js")}}"></script>
+	<script src="{{asset("bundles/stability/vendor/owl-carousel/owl.carousel.min.js")}}"></script>
+	<script src="{{asset("bundles/stability/vendor/jquery.fitvids.js")}}"></script>
+	<script src="{{asset("bundles/stability/vendor/jquery.appear.js")}}"></script>
+
+	<script src="{{asset("bundles/stability/js/custom.js")}}"></script>
+
+	<!-- UItoTop plugin -->
+	<script src="{{ asset('assets/back/js/easing.js') }}" type="text/javascript"></script>
+	
+	<script src="{{ asset('assets/back/js/jquery.ui.totop.js') }}" type="text/javascript"></script>
+	<!-- Starting the plugin -->
+
+	<script src="{{ asset('assets/roll/scrolld.min.js') }}"></script>
+	<!-- jQuery REVOLUTION Slider  -->
+	<script src="{{asset("bundles/stability/vendor/rs-plugin/js/jquery.themepunch.plugins.min.js")}}"></script>
+	<script src="{{asset("bundles/stability/vendor/rs-plugin/js/jquery.themepunch.revolution.min.js")}}"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$().UItoTop({ easingType: 'easeOutQuart' });
+		});
+	</script>
+	<script type="text/javascript">
+	$("[id*='Btn']").stop(true).on('click', function (e) 
+	{
+		var target = e.target.id.replace('Btn' , '');
+
+		if( $('#'+target).attr('id') == undefined )
+		{
+			return ;
+		}
+
+		e.preventDefault();
+		$(this).scrolld();
+	}
+	)
+	</script>
+
+	<script>
+    $(function() {
+        $('.description').readmore({
+            speed: 75,
+            maxHeight: 122
+        });
+    });
+    </script>
+    <script src="{{ asset('Readmore.js/readmore.js') }}"></script>
+
+    		<script>
+			jQuery(document).ready(function() {
+				jQuery('.tp-banner').revolution({
+					dottedOverlay:"filled",
+					delay:6000,
+					startwidth:1140,
+					startheight:556,
+					hideThumbs:10,
+					fullWidth:"on",
+					forceFullWidth:"on",
+					hideCaptionAtLimit:480,
+					//navigationType: "none",
+					soloArrowLeftHOffset:20,
+					soloArrowRightHOffset:20,
+					navigationType:"bullet",
+					navigationArrows:"solo", // nexttobullets, solo (old name verticalcentered), none
+					navigationStyle:"round"  // round, square, navbar, round-old, square-old, navbar-old 
+				});
+		   });
+		</script>
+{% endblock %}
+
+{% block body %}
+		
+	{{
+		render_esi(
+			controller('MakotoComponentBundle:Navbar:index' , 
+			{ 'active_router' : app.request.attributes.all._route })
+		)
+	}}
+	{% block main %}
+
+	{% endblock %}
+
+	{{render_esi(controller('MakotoComponentBundle:Footer:index'))}}
+
+
+{% endblock %}

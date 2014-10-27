@@ -1,0 +1,121 @@
+<hr class="lg">
+<section class="page-content">
+	<div class="container">
+	<a name="roll2"></a>
+	<div class="row" id="roll2">
+			<div class="col-md-6">
+				<div class="icon-box circled"  >
+					<div class="title-accent">
+						<h3>The Meaning of Makoto</h3>
+					</div>
+					<div class="tabs" data-animation="fadeInLeft" data-animation-delay="0">
+						<!-- Nav tabs -->
+						<ul class="nav nav-tabs">
+							<li class="active"><a href="#tab-1" data-toggle="tab">{{ data['What_The_Meaning_of_Makoto'][0].blockTitle }}</a></li>
+							<li><a href="#tab-2" data-toggle="tab">{{ data['What_The_Meaning_of_Makoto'][1].blockTitle }}</a></li>
+							<li><a href="#tab-3" data-toggle="tab">{{ data['What_The_Meaning_of_Makoto'][2].blockTitle }}</a></li>
+							<li><a href="#tab-4" data-toggle="tab">{{ data['What_The_Meaning_of_Makoto'][3].blockTitle }}</a></li>
+							<li><a href="#tab-5" data-toggle="tab">{{ data['What_The_Meaning_of_Makoto'][4].blockTitle }} </a></li>
+						</ul>
+
+						<!-- Tab panes -->
+						<div class="tab-content">
+							<div class="tab-pane fade in active" id="tab-1">
+								<div class="row">
+									<div class="col-md-5">
+                                        {{ data['What_The_Meaning_of_Makoto'][0].blockContent | raw }}
+									</div>
+									<div class="col-md-7">
+										<img src="{{ asset('assets/images/four.png') }}" alt="Stability">
+									</div>
+								</div>
+							</div>
+							<div class="tab-pane fade" id="tab-2">
+								<div class="row">
+									<div class="col-md-5">
+                                        {{ data['What_The_Meaning_of_Makoto'][1].blockContent | raw }}
+									</div>
+									<div class="col-md-7">
+										<img src="{{ asset('assets/images/humility.png') }}" alt="Stability">
+									</div>
+								</div>
+							</div>
+							<div class="tab-pane fade" id="tab-3">
+								<div class="row">
+									<div class="col-md-5">
+                                        {{ data['What_The_Meaning_of_Makoto'][2].blockContent | raw }}
+									</div>
+									<div class="col-md-7">
+										<img src="{{ asset('assets/images/integrity.png') }}" alt="Stability">
+									</div>
+								</div>
+							</div>
+							<div class="tab-pane fade" id="tab-4">
+								<div class="row">
+									<div class="col-md-5">
+                                        {{ data['What_The_Meaning_of_Makoto'][3].blockContent | raw }}
+									</div>
+									<div class="col-md-7">
+										<img src="{{ asset('assets/images/presence.png') }}" alt="Stability">
+									</div>
+								</div>
+							</div>
+							<div class="tab-pane fade" id="tab-5">
+								<div class="row">
+									<div class="col-md-5">
+                                        {{ data['What_The_Meaning_of_Makoto'][4].blockContent | raw }}
+									</div>
+									<div class="col-md-7">
+										<img src="{{ asset('assets/images/fun.png') }}" alt="Stability">
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-6">
+				<hr class="visible-sm visible-xs lg">
+				<div class="title-accent">
+					<h3>LATEST NEWS</h3>
+				</div>		
+				<div class="icon-box circled" data-animation="fadeInUp" data-animation-delay="200">
+					<div class="icon">
+						<i class="fa fa-location-arrow"></i>
+						<i class="fa fa-location-arrow bg-icon"></i>
+					</div>
+					<div class="icon-box-body">
+						<a href=" {{ url('cms_makoto_pages' , {'template_name' : 'single_1' , '_format' : 'jsp'} ) }}"><h4>OPERATIONS & SERVICE CONSULTING</h4></a>
+						<a href="{{ url('cms_makoto_pages' , {'template_name' : 'single_1' , '_format' : 'jsp'} ) }}">Over 26 years, Makoto practitioners have been solutions providers of KAIZEN (Lean Manufacturing) around the globe.  We have sought and successfully applied the principles and practices...</a>
+					</div>
+				</div>
+				<div class="icon-box circled" data-animation="fadeInUp" data-animation-delay="200">
+					<div class="icon">
+						<i class="fa fa-location-arrow"></i>
+						<i class="fa fa-location-arrow bg-icon"></i>
+					</div>
+					<div class="icon-box-body">
+						<a href="{{ url('cms_makoto_pages' , {'template_name' : 'single_2' , '_format' : 'jsp'} ) }}"><h4>Global Lean Deployment Program Implementation</h4></a>
+						<a href="{{ url('cms_makoto_pages' , {'template_name' : 'single_2' , '_format' : 'jsp'} ) }}">With our core systematic 4 Phased Approach to Lean Deployment, we are poised to support any organization in a multitude of languages in achieving their desired state of true operational excellence.  From initial concept to full scale deployment...</a>
+					</div>
+				</div>
+				<div class="icon-box circled" data-animation="fadeInUp" data-animation-delay="200">
+					<div class="icon">
+						<i class="fa fa-location-arrow"></i>
+						<i class="fa fa-location-arrow bg-icon"></i>
+					</div>
+					<div class="icon-box-body">
+						<a href="{{ url('cms_makoto_pages' , {'template_name' : 'single_3' , '_format' : 'jsp'} ) }}"><h4>Lean Benchmarking Tours(JAPAN LEAN EXPERIENCE)</h4></a>
+						<a href="{{ url('cms_makoto_pages' , {'template_name' : 'single_3' , '_format' : 'jsp'} ) }}">Makoto offers a unique and powerful management experience called the Japan Lean Experience or JLE.  Many of our clients plus some of the best known consulting firms and several fortune 1000 companies take advantage of this engagement...</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+		</div>
+	</div>
+</section>

@@ -1,0 +1,27 @@
+makoto_cms_homepage:
+    pattern:  /
+    defaults: { _controller: MakotoCmsBundle:Default:index }
+
+cms_catalogue:
+    pattern: /catalogue/{alias}_{page}.{_format}
+    defaults: { _controller: MakotoCmsBundle:Catalogue:index , page : 1 , _format : jsp }
+    requirements:
+        _format: html|jsp|makoto|php|page
+
+cms_catalogue_default:
+    pattern: /catalogue.{_format}
+    defaults: { _controller: MakotoCmsBundle:Catalogue:index , _format : jsp }
+    requirements:
+        _format: html|jsp|makoto|php|page
+
+cms_catalogue_article:
+    pattern: /p/{alias}.{_format}
+    defaults: { _controller: MakotoCmsBundle:Article:index , _format : jsp }
+    requirements:
+        _format: html|jsp|makoto|php|page
+
+cms_makoto_pages:
+    pattern: /m/{template_name}.{_format}
+    defaults: { _controller: MakotoCmsBundle:Default:makoto , _format : jsp }
+    requirements:
+        _format: html|jsp|makoto|php|page

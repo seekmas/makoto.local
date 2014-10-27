@@ -1,0 +1,59 @@
+makoto_extension:
+    resource: "@MakotoExtensionBundle/Resources/config/routing.yml"
+    prefix:   /
+
+makoto_component:
+    resource: "@MakotoComponentBundle/Resources/config/routing.yml"
+    prefix:   /widget
+
+makoto_admin:
+    resource: "@MakotoAdminBundle/Resources/config/routing.yml"
+    prefix:   /admin_makoto
+
+makoto_cms:
+    resource: "@MakotoCmsBundle/Resources/config/routing.yml"
+    prefix:   /
+
+admin:
+    resource: '@SonataAdminBundle/Resources/config/routing/sonata_admin.xml'
+    prefix: /admin
+
+_sonata_admin:
+    resource: .
+    type: sonata_admin
+    prefix: /admin
+
+sonata_user_security:
+    resource: "@SonataUserBundle/Resources/config/routing/sonata_security_1.xml"
+
+sonata_user_resetting:
+    resource: "@SonataUserBundle/Resources/config/routing/sonata_resetting_1.xml"
+    prefix: /resetting
+
+sonata_user_profile:
+    resource: "@SonataUserBundle/Resources/config/routing/sonata_profile_1.xml"
+    prefix: /profile
+
+sonata_user_register:
+    resource: "@SonataUserBundle/Resources/config/routing/sonata_registration_1.xml"
+    prefix: /register
+
+sonata_user_change_password:
+    resource: "@SonataUserBundle/Resources/config/routing/sonata_change_password_1.xml"
+    prefix: /profile
+
+sonata_user:
+    resource: '@SonataUserBundle/Resources/config/routing/admin_security.xml'
+    prefix: /admin
+
+gallery:
+    resource: '@SonataMediaBundle/Resources/config/routing/gallery.xml'
+    prefix: /media/gallery
+
+media:
+    resource: '@SonataMediaBundle/Resources/config/routing/media.xml'
+    prefix: /media
+
+ckeditor_browser:
+    pattern: /ckeditor_browser
+    defaults: { _controller: SonataFormatterBundle:CkeditorAdmin:browser }

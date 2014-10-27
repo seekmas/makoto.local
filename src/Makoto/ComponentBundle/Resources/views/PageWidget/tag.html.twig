@@ -1,0 +1,11 @@
+<div class="widget_tag_cloud widget widget__sidebar">
+	<h3 class="widget-title">Tags</h3>
+	<div class="widget-content">
+		<div class="tagcloud">
+			{% for t in tags %}
+			<a href="#">{{t.tag}}</a>
+			{% endfor %}
+
+		</div>
+	</div>
+</div>

@@ -1,0 +1,14 @@
+parameters:
+
+services:
+    block.repository:
+        class: Doctrine\Common\Persistence\ObjectRepository
+        factory_service: doctrine
+        factory_method: getRepository
+        arguments: [ Makoto\AdminBundle\Entity\Block ]
+
+    timeline.repository:
+        class: Doctrine\Common\Persistence\ObjectRepository
+        factory_service: doctrine
+        factory_method: getRepository
+        arguments: [ Makoto\AdminBundle\Entity\Timeline ]

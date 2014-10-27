@@ -1,0 +1,149 @@
+{% extends "MakotoCmsBundle::layouts.html.twig" %}
+
+{% block title %}{{article[0].title}} - Makoto{% endblock %}
+
+{% block main %}
+	<!-- Page Heading -->
+	<section class="page-heading">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<ul class="breadcrumb">
+						<li><a href="{{url('makoto_cms_homepage')}}">Home</a></li>
+						<li><a href="{{url('cms_catalogue' , {'alias' : article[1].alias , '_format' : 'html'}  )}}">
+							{{article[1].subject}}
+							</a>
+						</li>
+						<li class="active">Post</li>
+					</ul>
+				</div>
+				<div class="col-md-6">
+					<h1>{{article[1].subject}}</h1>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Page Heading / End -->
+			<!-- Page Content -->
+			<section class="page-content">
+				<div class="container">
+
+					<div class="row">
+						<div class="content col-md-8">
+
+							<!-- Post (Standard Format) -->
+							<article class="entry entry__standard entry__with-icon">
+								<div class="entry-icon visible-md visible-lg">
+									<i class="fa fa-file"></i>
+								</div>
+								<header class="entry-header">
+									<h2>{{article[0].title}}</h2>
+									<div class="entry-meta">
+										<span class="entry-date">{{article[0].date | date('H:i:s  Y / m / d')}}</span>
+										<span class="entry-category">in <a href="{{ url('cms_catalogue' , {'alias':article[1].alias} ) }}">{{article[1].subject}}</a></span>
+										<span class="entry-author">by <strong>{{ article[0].author }}</strong></span>
+									</div>
+								</header>
+								<div class="entry-content">
+										{{article[0].body | raw}}
+								</div>
+							</article>
+							<!-- Post (Standard Format) / End -->
+
+
+							{% if false %}
+							<!-- Comments Form -->
+							
+							<div id="respond" class="comment-respond">
+								<h3 class="reply-title">Leave a reply</h3>
+								<p class="comment-notes text-muted"><i>Your email address will not be published. Required fields are marked <span class="required">*</span></i></p>
+
+								<form action="#" method="POST" role="form">
+								
+									<div class="row">
+										<div class="col-md-6">
+											<div class="form-group">
+												<label for="">Name <span class="required">*</span></label>
+												<input type="text" class="form-control" id="">
+											</div>
+											
+											<div class="form-group">
+												<label for="">Email <span class="required">*</span></label>
+												<input type="email" class="form-control" id="">
+											</div>
+											
+											<div class="form-group">
+												<label for="">Website</label>
+												<input type="url" class="form-control" id="">
+											</div>
+										</div>
+									</div>
+
+									<div class="form-group">
+										<label for="">Comment</label>
+										<textarea cols="30" rows="10" class="form-control"></textarea>
+									</div>
+								
+									<button type="submit" class="btn btn-primary">Send Comment</button>
+								</form>
+							</div>
+							<!-- Comments Form / End -->
+							{% endif %}
+						</div>
+
+						<aside class="sidebar col-md-3 col-md-offset-1 col-bordered">
+							
+							<hr class="visible-sm visible-xs lg">
+
+							<!-- Widget :: Categories -->
+							{{render_esi( controller('MakotoComponentBundle:Navbar:sidecategory'))}}
+							<!-- /Widget :: Categories -->
+
+							<!-- Widget :: Tags Cloud -->
+							{{render_esi( controller('MakotoComponentBundle:PageWidget:tag'))}}
+							<!-- /Widget :: Tags Cloud -->
+
+							<!-- Widget :: Text Widget -->
+							<div class="widget_text widget widget__sidebar">
+								<h3 class="widget-title">{% if category.subject is defined %}{{category.subject}}{% endif %}</h3>
+								<div class="widget-content">
+									{% if category.description is defined %}{{category.description}}{% endif %}
+								</div>
+							</div>
+							<!-- /Widget :: Text Widget -->
+
+							<!-- Widget :: Latest Posts -->
+							<div class="latest-posts-widget widget widget__sidebar">
+								<h3 class="widget-title">Latest Posts</h3>
+								<div class="widget-content">
+									<ul class="latest-posts-list">
+										{% for po in latest_posts %}
+										<li>
+
+											<span class="date">{{ po.date | date('m/d/Y') }}</span>
+											<h5 class="title"><a href="{{ url('cms_catalogue_article' , {'alias':po.alias}) }}">{{ po.title }}</a></h5>
+										</li>
+										{% endfor %}
+									</ul>
+								</div>
+							</div>
+							<!-- /Widget :: Latest Posts -->
+
+
+						</aside>
+					</div>
+
+				</div>
+			</section>
+			<!-- Page Content / End -->
+<style>
+.entry-content {
+	font-size: 16px;
+}
+.entry-content img 
+{
+	width: 100%;
+}
+</style>
+
+{% endblock %}

@@ -1,0 +1,16 @@
+<div class="widget_categories widget widget__sidebar">
+	<h3 class="widget-title">Categories</h3>
+	<div class="widget-content">
+		<ul>
+			{% for cate in categories %}
+			
+				<li>
+					<a href="{{url('cms_catalogue' , {'alias' : cate.alias } )}}">
+						{{cate.subject}}
+					</a>
+				</li>
+			
+			{% endfor %}
+		</ul>
+	</div>
+</div>

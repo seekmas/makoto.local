@@ -1,0 +1,131 @@
+{% set current = 'http://' ~ app.request.server.get('HTTP_HOST') ~ app.request.server.get('REDIRECT_URL') %}
+<!-- Header -->
+<header class="header header header-top-colored menu-colored">
+
+	<div class="header-top">
+		<div class="container">
+			<div class="header-top-right">	
+				<span class="register">
+						<a href="{{ url('sonata_admin_redirect') }}">Login</a>
+				</span>
+			</div>
+		</div>
+	</div>
+	
+	<div class="header-main">
+		<div class="container">
+		<!-- Logo -->
+		<div class="logo">
+			<img alt="Stability" src="{{asset("assets/images/logo.png")}}"></img>
+		</div>
+		<!-- Logo / End -->
+
+		<button type="button" class="navbar-toggle">
+	        		<i class="fa fa-bars"></i>
+	      	</button>
+
+	      <!-- Navigation -->
+			<nav class="nav-main">
+				<ul data-breakpoint="992" class="flexnav">
+					<li class="active"><a href="{{ url('makoto_cms_homepage') }}">Makoto's DNA</a>
+						<ul>
+							<li><a id="roll1Btn" href="{{ url('makoto_cms_homepage') }}#roll1">The Meaning of Makoto</a></li>
+							<li><a id="roll2Btn" href="{{ url('makoto_cms_homepage') }}#roll2">The Makoto Way</a></li>
+						</ul>
+					</li>
+
+					<li class="active"><a href="{{ url('cms_makoto_pages' , {'template_name' : 'makoto_global' , '_format' : 'jsp'} ) }}">MAKOTO GLOBAL</a>
+						<ul>
+							<li><a id="ktwBtn" href="{{ url('cms_makoto_pages' , {'template_name' : 'makoto_global' , '_format' : 'jsp'} ) }}#ktw">Kaizen Training Workshops</a></li>
+							<li><a id="jleBtn" href="{{ url('cms_makoto_pages' , {'template_name' : 'makoto_global' , '_format' : 'jsp'} ) }}#jle">Japan Lean Experience (JLE)</a></li>
+							<li><a id="kcaBtn" href="{{ url('cms_makoto_pages' , {'template_name' : 'makoto_global' , '_format' : 'jsp'} ) }}#kca">Kaizen Consulting Activities</a></li>
+							<li><a href="{{ url('cms_makoto_pages' , {'template_name' : 'investments' , '_format' : 'jsp'} ) }}">Investments</a></li>
+						</ul>
+					</li>
+
+					<li class="active"><a href="{{ url('cms_makoto_pages' , {'template_name' : 'service' , '_format' : 'jsp'} ) }}">Services</a>
+						<ul>
+							<li><a id="jle2Btn" href="{{ url('cms_makoto_pages' , {'template_name' : 'service' , '_format' : 'jsp'} ) }}#jle2">Japan Lean Experience</a></li>
+							<li><a id="conBtn" href="{{ url('cms_makoto_pages' , {'template_name' : 'service' , '_format' : 'jsp'} ) }}#con">Consulting</a></li>
+							<li><a id="leaBtn" href="{{ url('cms_makoto_pages' , {'template_name' : 'service' , '_format' : 'jsp'} ) }}#lea">Learning</a></li>
+							<li><a id="othBtn" href="{{ url('cms_makoto_pages' , {'template_name' : 'service' , '_format' : 'jsp'} ) }}#oth">Other Services</a></li>
+						</ul>
+					</li>
+
+					{% for node in parameters %}
+
+					<li {% if node.route and current == url( node.route , node.parameter ) %}class="active"{% endif %}>
+
+						{% if node.parameter %}
+							
+							<a href="{{ url( node.route , node.parameter ) }}">{{node.name}}</a>
+						
+						{% elseif node.route %}
+							
+							<a href="{{ url( node.route ) }}">{{node.name}}</a>
+						
+						{% else %}
+							
+							<a href="javascript:void(0);">{{node.name}}</a>
+						
+						{% endif %}
+
+						{% if node.sub is defined %}
+
+							<ul>
+						
+							{% for sub_node in node.sub %}
+								
+								<li>
+
+									{% if sub_node.route %}
+
+										<a href="{{url( sub_node.route , sub_node.parameter )}}">
+											{{ sub_node.name }}
+										</a>
+
+									{% else %}
+
+										<a href="javascript:void(0);">
+											{{ sub_node.name }}
+										</a>
+
+									{% endif %}
+
+									{% if sub_node.sub is defined %}
+
+										<ul>
+
+											{% for sub_sub_node in sub_node.sub %}
+
+												
+												<li>
+													{% if sub_sub_node.route %}
+													<a href="{{url( sub_sub_node.route , sub_sub_node.parameter )}}">{{sub_sub_node.name}}</a>
+													{% else %}
+													<a href="javascript:void(0);">{{sub_sub_node.name}}</a>
+													{% endif %}
+												</li>
+											
+											{% endfor %}
+
+										</ul>
+
+									{% endif %}
+
+								</li>
+
+							{% endfor %}
+							</ul>
+						{% endif %}
+
+					</li>
+
+					{% endfor %}
+
+				</ul>
+			</nav>
+			<!-- Navigation / End -->
+		</div>
+	</div>
+</header>

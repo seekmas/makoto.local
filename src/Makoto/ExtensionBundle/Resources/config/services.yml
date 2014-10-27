@@ -1,0 +1,12 @@
+parameters:
+#    makoto_extension.example.class: Makoto\ExtensionBundle\Example
+
+services:
+    makoto.twig.extension:
+        class: Makoto\ExtensionBundle\Twig\Extension
+        tags:
+            - { name: twig.extension }
+    makoto.twig.tagextension:
+        class: Makoto\ExtensionBundle\Twig\TagExtension
+        tags:
+            - { name: twig.extension }

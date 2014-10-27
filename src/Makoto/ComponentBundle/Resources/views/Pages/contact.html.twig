@@ -1,0 +1,223 @@
+<!-- Page Heading -->
+<section class="page-heading">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h1>CONTACT</h1>
+            </div>
+            <div class="col-md-6">
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Page Heading / End -->
+
+<!-- Page Content -->
+<section class="page-content">
+    <div class="container">
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <figure class="alignnone">
+                                <img alt="" src="{{ asset('assets/images/samples/img2.jpg') }}"></img>
+                            </figure>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="title-accent">
+                            <h3 id="timeline">
+                              <span>
+                                About
+                              </span>
+                              Us
+                            </h3>
+                          </div>
+                          <span class="description">
+                            {{ data['aboutus'].blockContent | raw }}
+                          </span>
+                        </div>
+                    </div>
+
+        <hr class="lg">
+
+        <ul class="team-list row">
+              <div class="title-accent text-center">
+                  <h3 id="timeline">
+                    <span>
+                    Our
+                    </span>
+                    Team
+                  </h3>
+              </div>
+            <li class="team-item col-md-3">
+              <figure class="alignnone">
+                <img alt="" src="{{ asset('assets/images/brad.jpg') }}">
+              </figure>
+              <header class="team-head">
+                <span class="team-head-info"></span>
+                <h4 class="team-name">{{ data['Brad-Schmidt-Profile'].blockTitle }}</h4>
+                <ul class="team-social list-unstyled">
+                  <li>
+                    <i class="fa fa-envelope-o"></i><a href="mailto:bschmidt@makoto-investments.com">bschmidt@makoto-investments.com</a>
+                  </li>
+                </ul>
+              </header>
+                <span class="description">
+                    {{ data['Brad-Schmidt-Profile'].blockContent | raw }}
+                </span>
+            </li>
+            <li class="team-item col-md-3">
+              <figure class="alignnone">
+                <img alt="" src="{{ asset('assets/images/dj.jpg') }}">
+              </figure>
+              <header class="team-head">
+                <span class="team-head-info"></span>
+                <h4 class="team-name">{{ data['DJ-Duarte-Profile'].blockTitle | raw }}</h4>
+                <ul class="team-social list-unstyled">
+                  <li>
+                    <i class="fa fa-envelope-o"></i><a href="mailto:dduarte@makoto-investments.com">dduarte@makoto-investments.com</a>
+                  </li>
+                </ul>
+              </header>
+              <span class="description">
+                    {{ data['DJ-Duarte-Profile'].blockContent | raw }}
+              </span>
+            </li>
+            <li class="team-item col-md-3">
+              <figure class="alignnone">
+                <img alt="" src="{{ asset('assets/images/geno.jpg') }}">
+              </figure>
+              <header class="team-head">
+                <span class="team-head-info"></span>
+                <h4 class="team-name">{{ data['CE-Geno-Johnston-Profile'].blockTitle | raw }}</h4>
+                <ul class="team-social list-unstyled">
+                  <li>
+                    <i class="fa fa-envelope-o"></i><a href="mailto:gjohnston@makoto-investments.com">gjohnston@makoto-investments.com</a>
+                  </li>
+                </ul>
+              </header>
+              <span class="description">
+                    {{ data['CE-Geno-Johnston-Profile'].blockContent | raw }}
+              </span>
+            </li>
+            <li class="team-item col-md-3">
+              <figure class="alignnone">
+                <img alt="" src="{{ asset('assets/images/law.jpg') }}">
+              </figure>
+              <header class="team-head">
+                <span class="team-head-info"></span>
+                <h4 class="team-name">{{ data['Paul-Law-Profile'].blockTitle | raw }}</h4>
+                <ul class="team-social list-unstyled">
+                  <li>
+                    <i class="fa fa-envelope-o"></i><a href="mailto:plaw@makoto-investments.com">plaw@makoto-investments.com</a>
+                  </li>
+                </ul>
+              </header>
+                <span class="description">
+                    {{ data['Paul-Law-Profile'].blockContent | raw }}
+                </span>
+            </li>
+        </ul>
+
+        <hr class="lg">
+        
+        <div class="row">
+            <div class="title-accent" align="center">
+                <h3 id="timeline">Corporate History</h3>
+            </div>
+            <ul class="timeline">
+                {% set prev = 0 %}
+                {% for timeline in data['Timeline'] %}
+
+
+                <li{% if timeline.locatedLeft is null or timeline.locatedLeft == 0%} class="timeline-inverted"{% endif %}>
+                {% if timeline.year != prev %}
+                      <div class="timeline-badge {% if timeline.highLight == true %}warning{% else %}info{% endif %}">{{ timeline.year }}</div>
+                      {% set prev = timeline.year %}
+                {% endif %}
+                  <div class="timeline-panel">
+                    <div class="timeline-heading">
+                      <strong>{{ timeline.events }}</strong>
+                    </div>
+                  </div>
+                </li>
+              
+              {% endfor %}
+
+
+            </ul>
+        </div>
+         <!-- time line end -->
+
+        <hr class="lg">
+            
+        <div class="row">
+            <div class="title-accent" align="center">
+                <h3>Global Reach = Local Deployment</h3>
+            </div>
+            
+
+            <div class="col-md-12" align="center">
+                <img src="{{asset("assets/images/global-map.png")}}" width="100%" alt="">
+            </div>
+            <div class="col-md-2">
+                <div class="list">
+                    <ul>
+                        <li>Australia</li>
+                        <li>Canada</li>
+                        <li>China</li>
+                        <li>Chzech Repubiic</li>
+                        <li>Denmark</li>
+                        <li>Egypt</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="list">
+                    <ul>
+                        <li>Ethiopia</li>
+                        <li>France</li>
+                        <li>Germany</li>
+                        <li>India</li>
+                        <li>Indonesia</li>
+                        <li>Japan</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="list">
+                    <ul>
+                        <li>Kenya</li>
+                        <li>Macau</li>
+                        <li>Malaysia</li>
+                        <li>Netherlands</li>
+                        <li>Poland</li>
+                        <li>Serbia</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="list">
+                    <ul>
+                        <li>Singapore</li>
+                        <li>Slovakia</li>
+                        <li>South Africa</li>
+                        <li>Taiwan</li>
+                        <li>Thailand</li>
+                        <li>United Arab Emirates</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="list">
+                    <ul>
+                        <li>United Kingdom</li>
+                        <li>United States</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+<!-- Page Content / End -->

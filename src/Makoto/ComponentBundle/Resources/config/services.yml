@@ -1,0 +1,4 @@
+parameters:
+#    makoto_component.example.class: Makoto\ComponentBundle\Example
+
+services:

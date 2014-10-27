@@ -1,0 +1,58 @@
+parameters:
+    navigation_patameter:
+        #HomePage
+        # makoto_global:
+        #     name: Makoto Global
+        #     route: cms_makoto_pages
+        #     parameter:
+        #         template_name: makoto_global
+        #         _format: jsp
+        #     sub:
+        #         investments:
+        #             name: The Investments
+        #             route: cms_makoto_pages
+        #             parameter:
+        #                 template_name: investments
+        #                 _format: jsp
+        # services:
+        #     name: Services
+        #     route: cms_makoto_pages
+        #     parameter:
+        #         template_name: japan_lean_experience
+        #         _format: jsp
+        #     sub:
+        #         consulting:
+        #             name: Consulting
+        #             route: cms_makoto_pages
+        #             parameter:
+        #                 template_name: consulting
+        #                 _format: jsp
+        #         learning:
+        #             name: Learning
+        #             route: cms_makoto_pages
+        #             parameter:
+        #                 template_name: learning
+        #                 _format: jsp
+        #         other_services:
+        #             name: Other Services
+        #             route: cms_makoto_pages
+        #             parameter:
+        #                 template_name: other_services
+        #                 _format: jsp
+
+        # blog:
+        #     name: Blogs
+        #     route: cms_catalogue_default
+        #     parameter:
+        #         _format: jsp
+        blog:
+            name: Blog
+            route: cms_catalogue_default
+            parameter:
+                _format: jsp
+        contact:
+            name: Contact
+            route: cms_makoto_pages
+            parameter: 
+                template_name: contact
+                _format: jsp
